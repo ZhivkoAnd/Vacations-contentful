@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export const RecipeCard = ({ recipe }) => {
+export const VacationPanel = ({ recipe }) => {
   const { title, slug, cookingTime, thumbnail } = recipe.fields;
   return (
     <div className="card">
@@ -11,16 +11,19 @@ export const RecipeCard = ({ recipe }) => {
           src={`https:${thumbnail.fields.file.url}`}
           width={thumbnail.fields.file.details.image.width}
           height={thumbnail.fields.file.details.image.height}
+          className="card-img-top"
         />
       </div>
-      <div className="content">
+      <div className="card-body">
         <div className="info">
-          <h4> {title}</h4>
-          <p>Takes approx: {cookingTime} minutes to make</p>
+          <h4 className="card-title"> {title}</h4>
+          <p className="card-text">
+            Takes approx: {cookingTime} minutes to make
+          </p>
         </div>
         <div className="actions">
           <Link href={`/recipes/${slug}`}>
-            <a>Cook this</a>
+            <a className="btn btn-primary">Cook this</a>
           </Link>
         </div>
       </div>

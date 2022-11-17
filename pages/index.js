@@ -1,5 +1,5 @@
 import { createClient } from "contentful";
-import { RecipeCard } from "../components/RecipeCard";
+import { VacationPanel } from "../components/VacationPanel";
 
 // We use the getStaticProps to grab any data and then use that data to inject props to our components
 export async function getStaticProps() {
@@ -19,9 +19,9 @@ export async function getStaticProps() {
 export default function Recipes({ recipes }) {
   console.log(recipes);
   return (
-    <div className="recipe-list">
+    <div className="vacation-panels">
       {recipes.map((recipe) => (
-        <RecipeCard key={recipe.sys.id} recipe={recipe} />
+        <VacationPanel key={recipe.sys.id} recipe={recipe} />
       ))}
     </div>
   );

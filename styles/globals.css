@@ -1,111 +1,172 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --red-light: #ff6c62;
+  --red-heavy: #a30000;
+  --green-light: #61c17c;
+  --green-heavy: #005e1b;
+  --blue-light: #00b6ff;
+  --blue-heavy: #0037ff;
+  --yellow-light: #f2d600;
+  --yellow-heavy: #605000;
+  --cyan-light: #00fff7;
+  --cyan-heavy: #005e5b;
+  --white: #fff;
+  --gray-light: #f7f7f7;
+  --gray-heavy: #dddddd;
+  --purple-bright: #ce8fff;
+  --purple-light: #150d1c;
+  --purple-heavy: #0c0911;
+}
+
+.light {
+  --background: var(--gray-light);
+  --text: var(--purple-heavy);
+  --title: var(--purple-heavy);
+  --title-sub: var(--purple-heavy);
+  --navbar: var(--gray-heavy);
+  --navbar-links: var(--purple-heavy);
+  --red: var(--red-heavy);
+  --green: var(--green-heavy);
+  --blue: var(--blue-heavy);
+  --yellow: var(--yellow-heavy);
+  --cyan: var(--cyan-heavy);
+
+  font-weight: bold;
+}
+
+.dark {
+  --background: var(--purple-heavy);
+  --text: var(--white);
+  --title-main: var(--white);
+  --title-sub: var(--cyan);
+  --navbar: var(--purple-light);
+  --navbar-links: var(--cyan);
+  --red: var(--red-light);
+  --green: var(--green-light);
+  --blue: var(--blue-light);
+  --yellow: var(--yellow-light);
+  --cyan: var(--cyan-light);
+}
+
+.App {
+  text-align: center;
+  font-size: 16px;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Quicksand", sans-serif;
+  overflow: hidden;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out;
+}
 
 body {
-  background: #f4e640;
-  margin: 0;
-  font-family: "Roboto";
-  font-size: 1.5em;
-}
-.layout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--purple-heavy);
 }
-header {
+
+h2 {
+  font-size: 1.7rem;
+}
+
+.page-content {
+  text-align: left;
+  padding-top: 3rem;
+  min-height: calc(100vh - 180px);
+}
+
+.border {
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 1px solid rgba(69, 162, 159, 0.1803921569) !important;
+}
+
+.red {
+  color: var(--red);
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.white {
+  color: var(--white);
+}
+
+.green {
+  color: var(--green);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.cyan {
+  color: var(--cyan);
+}
+
+.hljs {
+  background: #0c081c;
+}
+
+.hljs-comment,
+.hljs-meta {
+  color: #59ae5f;
+}
+
+.title-main {
+  color: var(--title-main);
+  margin-bottom: 3rem;
   text-align: center;
-  margin: 60px 0;
 }
-header a {
-  text-decoration: none;
-  color: black;
-  text-transform: uppercase;
-  display: inline-block;
+
+.title-sub {
+  color: var(--title-sub);
+  margin-bottom: 2rem;
 }
-header h1,
-header h2 {
-  margin: 0;
-}
-header span {
-  display: block;
-  line-height: 1em;
-}
-header span:first-child {
-  font-size: 1em;
-  font-weight: 400;
-}
-header span:last-child {
-  font-size: 1.5em;
-  font-weight: 800;
-}
-header h2 {
-  font-size: 1.2em;
-  font-weight: 400;
-}
-footer {
-  background: #111;
-  color: #bbb;
-  padding: 40px;
+
+.footer {
+  height: 121px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--navbar);
+  color: var(--text);
   text-align: center;
+  font-family: "Quicksand", sans-serif;
   margin-top: auto;
 }
-.page-content {
-  max-width: 1200px;
-  margin: 20px auto 80px;
-  padding: 0 20px;
-  width: 100%;
-  box-sizing: border-box;
+
+.footer > .container > a {
+  color: var(--blue);
 }
 
-.recipe-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px 60px;
-}
-
-.card {
-  transform: rotateZ(-1deg);
-}
-
-.content {
-  background: #fff;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-  margin: 0;
-  position: relative;
-  top: -40px;
-  left: -10px;
-}
-
-.info {
-  padding: 16px;
-}
-
-.info h4 {
-  margin: 4px 0;
-  text-transform: uppercase;
-}
-
-.info p {
-  margin: 0;
-  color: #777;
-}
-
-.actions {
-  margin-top: 20px;
+.vacation-panels {
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.actions a {
-  color: #fff;
-  background-color: #f01b29;
-  padding: 16px 24px;
-  text-decoration: none;
-}
+@media (max-width: 768px) {
+  .page-content {
+    padding-top: 1.5rem;
+    min-height: calc(100vh - 180px);
+  }
 
-.info span::after {
-  content: ", ";
-}
+  .title-main {
+    margin-bottom: 2rem;
+  }
 
-.info span:last-child::after {
-  content: ".";
+  .title-sub {
+    font-size: 1.4rem;
+  }
+
+  .footer {
+    height: 180px;
+  }
 }
