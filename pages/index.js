@@ -19,10 +19,14 @@ export async function getStaticProps() {
 export default function Recipes({ recipes }) {
   console.log(recipes);
   return (
-    <div className="vacation-panels">
-      {recipes.map((recipe) => (
-        <VacationPanel key={recipe.sys.id} recipe={recipe} />
-      ))}
+    <div className="container">
+      <div className="row">
+        <div className="vacation-panels">
+          {recipes.map((recipe) => (
+            <VacationPanel key={recipe.sys.id} recipe={recipe} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

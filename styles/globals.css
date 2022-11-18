@@ -74,7 +74,6 @@ h2 {
 }
 
 .page-content {
-  text-align: left;
   padding-top: 3rem;
   min-height: calc(100vh - 180px);
 }
@@ -149,7 +148,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 @media (max-width: 768px) {
