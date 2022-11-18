@@ -1,6 +1,6 @@
-import Navigation from "./Navigation";
 import Footer from "./Footer";
 import { useState } from "react";
+import Navigation from "./Navigation";
 
 export default function Layout({ children }) {
   const [colorMode, setColorMode] = useState("dark");

@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.css";
 import "../components/vacationPanel.scss";
+import "../components/global/navigation.scss";
 import Layout from "../components/global/Layout";
 import { motion } from "framer-motion";
 
