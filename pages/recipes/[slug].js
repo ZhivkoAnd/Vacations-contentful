@@ -52,23 +52,22 @@ export default function RecipeDetails({ recipe }) {
   const { title, gallery } = recipe.fields;
 
   return (
-    <>
-      <div className="banner">
-        <h1 className="title-main">{title}</h1>
+    <div className="container">
+      <h1 className="title-main">{title}</h1>
+      <div className="vacation-panels-grid">
         {gallery.map((image) => {
           return (
             <Image
               src={`https:${image.fields.file.url}`}
-              width={image.fields.file.details.image.width}
-              height={image.fields.file.details.image.height}
+              width={200}
+              height={150}
             />
           );
         })}
-      </div>
-
-      {/* <div className="description">
+        {/* <div className="description">
         <div>{documentToReactComponents(description)}</div>
       </div> */}
-    </>
+      </div>
+    </div>
   );
 }

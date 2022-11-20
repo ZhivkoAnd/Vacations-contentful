@@ -131,6 +131,11 @@ h2 {
   /* justify-content: space-around; */
 }
 
+.vacation-panels-grid {
+  display: flex;
+  gap: 1.5rem;
+}
+
 @media (max-width: 768px) {
   .page-content {
     padding-top: 1.5rem;
