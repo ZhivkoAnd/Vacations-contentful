@@ -1,6 +1,6 @@
 import Footer from "./Footer";
 import { useState } from "react";
-import Navigation2 from "./Navigation2";
+import Navigation from "./Navigation";
 
 export default function Layout({ children }) {
   const [colorMode, setColorMode] = useState("dark");
@@ -15,7 +15,7 @@ export default function Layout({ children }) {
 
   return (
     <div className={`App ${colorMode}`}>
-      <Navigation2 lightMode={lightMode} darkMode={darkMode} />
+      <Navigation lightMode={lightMode} darkMode={darkMode} />
       <div className="page-content">{children}</div>
       <Footer />
     </div>

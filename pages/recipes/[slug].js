@@ -49,28 +49,21 @@ export async function getStaticProps({ params }) {
 export default function RecipeDetails({ recipe }) {
   if (!recipe) return <Skeleton />;
 
-  const { featuredImage, title, cookingTime, ingredients, method } =
-    recipe.fields;
+  const { featuredImage, title, description } = recipe.fields;
   return (
     <>
       <div className="banner">
-        <Image
+        {/* <Image
           src={`https:${featuredImage.fields.file.url}`}
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
-        />
+        /> */}
         <h2>{title}</h2>
       </div>
-      <div className="info">
-        <p>Take about {cookingTime} minutes to cook</p>
-        <h3>Ingredients:</h3>
-        {ingredients.map((ing) => (
-          <span key={ing}>{ing}</span>
-        ))}
-      </div>
+
       <div className="method">
         <h3>Method</h3>
-        <div>{documentToReactComponents(method)}</div>
+        <div>{documentToReactComponents(description)}</div>
       </div>
     </>
   );

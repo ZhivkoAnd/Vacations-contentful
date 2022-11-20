@@ -1,9 +1,17 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export const VacationPanel = ({ recipe }) => {
-  const { title, slug, cookingTime, thumbnail } = recipe.fields;
+  const { title, slug, thumbnail, date } = recipe.fields;
+
+  const [newDate, setNewDate] = useState();
+
+  useEffect(() => {
+    setNewDate(new Date(date).toLocaleDateString());
+  }, []);
+
   return (
     <div className="vacation-panel">
       <Image
@@ -12,8 +20,8 @@ export const VacationPanel = ({ recipe }) => {
         height={thumbnail.fields.file.details.image.height}
         className="vacation-panel__image"
       />
-      <h3 className="vacation-panel__title"> {title}</h3>
-      <p className="vacation-panel__description">{cookingTime}</p>
+      <h2 className="vacation-panel__title"> {title}</h2>
+      <h3 className="vacation-panel__date"> {newDate}</h3>
       <Link href={`/recipes/${slug}`}>
         <a className="btn btn-primary vacation-panel__button">Gallery</a>
       </Link>
