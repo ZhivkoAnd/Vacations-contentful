@@ -1,6 +1,6 @@
 import { createClient } from "contentful";
 import Image from "next/image";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Skeleton } from "../../components/Skeleton";
 
 const client = createClient({
@@ -49,7 +49,7 @@ export async function getStaticProps({ params }) {
 export default function RecipeDetails({ recipe }) {
   if (!recipe) return <Skeleton />;
 
-  const { featuredImage, title, description } = recipe.fields;
+  const { title } = recipe.fields;
   return (
     <>
       <div className="banner">
@@ -58,13 +58,12 @@ export default function RecipeDetails({ recipe }) {
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
         /> */}
-        <h2>{title}</h2>
+        <h1 className="title-main">{title}</h1>
       </div>
 
-      <div className="method">
-        <h3>Method</h3>
+      {/* <div className="description">
         <div>{documentToReactComponents(description)}</div>
-      </div>
+      </div> */}
     </>
   );
 }

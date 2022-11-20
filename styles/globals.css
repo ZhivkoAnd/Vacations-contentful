@@ -4,7 +4,7 @@
   --green-light: #61c17c;
   --green-heavy: #005e1b;
   --blue-light: #00b6ff;
-  --blue-heavy: #0037ff;
+  --blue-heavy: rgb(0, 30, 60);
   --yellow-light: #f2d600;
   --yellow-heavy: #605000;
   --cyan-light: #00fff7;
@@ -13,8 +13,8 @@
   --gray-light: #f7f7f7;
   --gray-heavy: #dddddd;
   --purple-bright: #ce8fff;
-  --purple-light: #150d1c;
-  --purple-heavy: #0c0911;
+  --purple-light: rgb(0, 30, 60);
+  --purple-heavy: rgb(10, 25, 41);
 }
 
 .light {
@@ -75,7 +75,7 @@ h2 {
 
 .page-content {
   padding-top: 3rem;
-  min-height: calc(100vh - 180px);
+  min-height: calc(100vh - 206px);
 }
 
 .border {
@@ -128,26 +128,11 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.footer {
-  height: 121px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--navbar);
-  color: var(--text);
-  text-align: center;
-  font-family: "Quicksand", sans-serif;
-  margin-top: auto;
-}
-
-.footer > .container > a {
-  color: var(--blue);
-}
-
 .vacation-panels {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  gap: 1.5rem;
   /* justify-content: space-around; */
 }
 
@@ -163,9 +148,5 @@ h2 {
 
   .title-sub {
     font-size: 1.4rem;
-  }
-
-  .footer {
-    height: 180px;
   }
 }

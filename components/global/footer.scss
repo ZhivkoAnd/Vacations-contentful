@@ -1,0 +1,21 @@
+.footer {
+  height: 121px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--navbar);
+  color: var(--text);
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  margin-top: auto;
+}
+
+.footer > .container > a {
+  color: var(--blue);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: 180px;
+  }
+}

@@ -14,10 +14,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
+import { BsFillSunFill } from "react-icons/bs";
+import { FaMoon } from "react-icons/fa";
 
 const pages = ["Vacations"];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({ lightMode, darkMode }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -71,7 +73,7 @@ function ResponsiveAppBar() {
   }));
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "red" }}>
+    <AppBar position="static" className="navbar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -123,6 +125,10 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
+          <div className="navbar__colorThemeIcons">
+            <BsFillSunFill onClick={lightMode} className="sun" />
+            <FaMoon onClick={darkMode} className="moon" />
+          </div>
           <Box sx={{ flexGrow: 0 }}>
             <Search>
               <SearchIconWrapper>

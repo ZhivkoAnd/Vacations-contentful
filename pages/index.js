@@ -17,10 +17,10 @@ export async function getStaticProps() {
 }
 
 export default function Recipes({ recipes }) {
-  console.log(recipes);
   return (
     <div className="container">
       <div className="row">
+        <h1 className="title-main">Vacations</h1>
         <div className="vacation-panels">
           {recipes.map((recipe) => (
             <VacationPanel key={recipe.sys.id} recipe={recipe} />
