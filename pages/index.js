@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import { VacationPanel } from "../components/VacationPanel";
+import { useState } from "react";
 
 // We use the getStaticProps to grab any data and then use that data to inject props to our components
 export async function getStaticProps() {
@@ -17,12 +18,20 @@ export async function getStaticProps() {
 }
 
 export default function Recipes({ recipes }) {
+  const [letters, setLetters] = useState("");
+  const [filtered, setFiltered] = useState(recipes);
+
+  console.log(letters);
   return (
     <div className="container">
+      <input
+        value={letters}
+        onChange={(e) => setLetters(e.target.value)}
+      ></input>
       <div className="row">
         <h1 className="title-main">Vacations</h1>
         <div className="vacation-panels">
-          {recipes.map((recipe) => (
+          {filtered.map((recipe) => (
             <div className="col-xs-12">
               <VacationPanel key={recipe.sys.id} recipe={recipe} />
             </div>
