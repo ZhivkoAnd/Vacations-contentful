@@ -49,16 +49,21 @@ export async function getStaticProps({ params }) {
 export default function RecipeDetails({ recipe }) {
   if (!recipe) return <Skeleton />;
 
-  const { title } = recipe.fields;
+  const { title, gallery } = recipe.fields;
+
   return (
     <>
       <div className="banner">
-        {/* <Image
-          src={`https:${featuredImage.fields.file.url}`}
-          width={featuredImage.fields.file.details.image.width}
-          height={featuredImage.fields.file.details.image.height}
-        /> */}
         <h1 className="title-main">{title}</h1>
+        {gallery.map((image) => {
+          return (
+            <Image
+              src={`https:${image.fields.file.url}`}
+              width={image.fields.file.details.image.width}
+              height={image.fields.file.details.image.height}
+            />
+          );
+        })}
       </div>
 
       {/* <div className="description">

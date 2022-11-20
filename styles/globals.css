@@ -112,11 +112,6 @@ h2 {
   background: #0c081c;
 }
 
-.hljs-comment,
-.hljs-meta {
-  color: #59ae5f;
-}
-
 .title-main {
   color: var(--title-main);
   margin-bottom: 3rem;

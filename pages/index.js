@@ -23,7 +23,9 @@ export default function Recipes({ recipes }) {
         <h1 className="title-main">Vacations</h1>
         <div className="vacation-panels">
           {recipes.map((recipe) => (
-            <VacationPanel key={recipe.sys.id} recipe={recipe} />
+            <div className="col-xs-12">
+              <VacationPanel key={recipe.sys.id} recipe={recipe} />
+            </div>
           ))}
         </div>
       </div>
