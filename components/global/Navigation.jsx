@@ -16,8 +16,14 @@ import { useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import { BsFillSunFill } from "react-icons/bs";
 import { FaMoon } from "react-icons/fa";
+import Link from "next/link";
 
-const pages = ["Vacations"];
+const pages = [
+  {
+    label: "Vacations",
+    link: "/",
+  },
+];
 
 function ResponsiveAppBar({ lightMode, darkMode }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -107,8 +113,10 @@ function ResponsiveAppBar({ lightMode, darkMode }) {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                  <Link href={page.link}>
+                    <Typography textAlign="center">{page.label}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -116,13 +124,15 @@ function ResponsiveAppBar({ lightMode, darkMode }) {
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link href={page.link}>
+                <Button
+                  key={page.label}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.label}
+                </Button>
+              </Link>
             ))}
           </Box>
           <div className="navbar__colorThemeIcons">
