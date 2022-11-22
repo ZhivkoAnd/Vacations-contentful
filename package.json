@@ -1,5 +1,5 @@
 {
-  "name": "just-add-marmite",
+  "name": "vacations-contentful",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,7 @@
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
+    "react-image-gallery": "^1.2.11",
     "sass": "^1.56.1"
   }
 }

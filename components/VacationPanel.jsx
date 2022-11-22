@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-export const VacationPanel = ({ recipe }) => {
-  const { title, slug, thumbnail, date } = recipe.fields;
+export const VacationPanel = ({ vacation }) => {
+  const { title, slug, thumbnail, date } = vacation.fields;
 
   const [newDate, setNewDate] = useState();
 
