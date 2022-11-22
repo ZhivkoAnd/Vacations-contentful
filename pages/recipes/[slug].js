@@ -2,7 +2,7 @@ import { createClient } from "contentful";
 import Image from "next/image";
 // import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Skeleton } from "../../components/Skeleton";
-import VacationGallery from "../../components/VacationGallery";
+import ImageGallery from 'react-image-gallery';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -48,13 +48,29 @@ export async function getStaticProps({ params }) {
 }
 
 export default function RecipeDetails({ recipe }) {
+
+  const images = [
+    {
+      original: 'https://picsum.photos/id/1018/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1018/250/150/',
+    },
+    {
+      original: 'https://picsum.photos/id/1015/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1015/250/150/',
+    },
+    {
+      original: 'https://picsum.photos/id/1019/1000/600/',
+      thumbnail: 'https://picsum.photos/id/1019/250/150/',
+    },
+  ];
+
   if (!recipe) return <Skeleton />;
 
   const { title, gallery } = recipe.fields;
 
   return (
     <div className="container">
-            <VacationGallery/>
+      <ImageGallery items={images}/>
       <h1 className="title-main">{title}</h1>
       <div className="vacation-panels-grid">
         {gallery.map((image,index) => {
