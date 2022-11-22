@@ -12,21 +12,21 @@ export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "recipe" });
 
   return {
-    props: { recipes: res.items },
+    props: { vacations: res.items },
     revalidate: 1,
   };
 }
 
-export default function Recipes({ recipes }) {
+export default function Recipes({ vacations }) {
   const [query, setQuery] = useState("");
-  const [filteredCities, setFilteredCities] = useState(recipes);
+  const [filteredCities, setFilteredCities] = useState(vacations);
 
   useEffect(() => {
-    const filtered = recipes.filter((city) => city.fields.title === query);
-    if (filtered.length === 0) {
-      setFilteredCities(recipes);
+    const inputCity = vacations.filter((city) => city.fields.title === query);
+    if (inputCity.length === 0) {
+      setFilteredCities(vacations);
     } else {
-      setFilteredCities(filtered);
+      setFilteredCities(inputCity);
     }
   }, [query]);
 
