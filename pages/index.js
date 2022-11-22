@@ -22,9 +22,9 @@ export default function Vacation({ vacations }) {
   const [filteredCities, setFilteredCities] = useState(vacations);
 
   useEffect(() => {
-    const inputCity = vacations.filter((city) => city.fields.title === query);
+    const inputCity = vacations.filter((city) => city.fields.title.includes(query));
     if (inputCity.length === 0) {
-      setFilteredCities(vacations);
+      setFilteredCities([]);
     } else {
       setFilteredCities(inputCity);
     }
@@ -38,7 +38,7 @@ export default function Vacation({ vacations }) {
         <div className="vacation-panels">
           {filteredCities.map((vacation) => (
             <div className="col-xs-12" key={vacation.sys.id}>
-              <VacationPanel  vacation={vacation} />
+              <VacationPanel vacation={vacation} />
             </div>
           ))}
         </div>

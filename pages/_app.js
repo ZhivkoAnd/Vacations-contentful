@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import "../components/vacationPanel.scss";
 import "../components/global/navigation.scss";
 import "../components/global/footer.scss";
+import "../node_modules/react-image-gallery/styles/scss/image-gallery.scss"
 import Layout from "../components/global/Layout";
 import { motion } from "framer-motion";
 import { useState } from "react";
