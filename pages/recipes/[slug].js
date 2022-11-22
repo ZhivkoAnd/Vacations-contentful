@@ -67,6 +67,19 @@ export default function RecipeDetails({ recipe }) {
   if (!recipe) return <Skeleton />;
 
   const { title, gallery } = recipe.fields;
+  console.log(recipe.fields)
+  console.log(recipe.fields.thumbnail.fields.file.url)
+   const {thumbnail} = recipe.fields.thumbnail.fields.file.url
+   console.log(recipe.fields.gallery)
+
+   const img = [
+    {
+      original: `https:${recipe.fields.gallery}`,
+      thumbnail: `https:${recipe.fields.thumbnail.fields.file.url}`
+    }
+   ]
+
+   console.log(img)
 
   return (
     <div className="container">
