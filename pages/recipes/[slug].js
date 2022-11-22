@@ -55,13 +55,15 @@ export default function RecipeDetails({ recipe }) {
     <div className="container">
       <h1 className="title-main">{title}</h1>
       <div className="vacation-panels-grid">
-        {gallery.map((image) => {
+        {gallery.map((image,index) => {
           return (
-            <Image
-              src={`https:${image.fields.file.url}`}
-              width={200}
-              height={150}
-            />
+            <div key={index}>
+              <Image
+                src={`https:${image.fields.file.url}`}
+                width={200}
+                height={150}
+              />
+            </div>
           );
         })}
         {/* <div className="description">

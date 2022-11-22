@@ -17,7 +17,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Recipes({ vacations }) {
+export default function Vacation({ vacations }) {
   const [query, setQuery] = useState("");
   const [filteredCities, setFilteredCities] = useState(vacations);
 
@@ -36,9 +36,9 @@ export default function Recipes({ vacations }) {
       <div className="row">
         <h1 className="title-main">Vacations</h1>
         <div className="vacation-panels">
-          {filteredCities.map((recipe) => (
-            <div className="col-xs-12">
-              <VacationPanel key={recipe.sys.id} recipe={recipe} />
+          {filteredCities.map((vacation) => (
+            <div className="col-xs-12" key={vacation.sys.id}>
+              <VacationPanel  vacation={vacation} />
             </div>
           ))}
         </div>
