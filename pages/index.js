@@ -20,10 +20,12 @@ export async function getStaticProps() {
 export default function Vacation({ vacations }) {
   const [query, setQuery] = useState("");
   const [filteredCities, setFilteredCities] = useState(vacations);
-  const [noVacationFound, setNoVacationFound] = useState(false)
+  const [noVacationFound, setNoVacationFound] = useState(false);
 
   useEffect(() => {
-    const inputCity = vacations.filter((city) => city.fields.title.toLowerCase().includes(query.toLowerCase()));
+    const inputCity = vacations.filter((city) =>
+      city.fields.title.toLowerCase().includes(query.toLowerCase())
+    );
     if (inputCity.length) {
       setFilteredCities(inputCity);
       setNoVacationFound(false);
@@ -38,7 +40,7 @@ export default function Vacation({ vacations }) {
       <input value={query} onChange={(e) => setQuery(e.target.value)}></input>
       <div className="row">
         <h1 className="title-main">Vacations</h1>
-        {noVacationFound ? <div>NOTHING HERE</div> : ''}
+        {noVacationFound ? <div>NOTHING HERE</div> : ""}
         <div className="vacation-panels">
           {filteredCities.map((vacation) => (
             <div className="col-xs-12" key={vacation.sys.id}>

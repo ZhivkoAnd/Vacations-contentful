@@ -25,8 +25,10 @@ const pages = [
   },
 ];
 
-function ResponsiveAppBar({ lightMode, darkMode }) {
+function ResponsiveAppBar({ lightMode, darkMode, data }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
+
+  console.log(data.items);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
