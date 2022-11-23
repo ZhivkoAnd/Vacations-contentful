@@ -17,6 +17,7 @@ import { styled, alpha } from "@mui/material/styles";
 import { BsFillSunFill } from "react-icons/bs";
 import { FaMoon } from "react-icons/fa";
 import Link from "next/link";
+import { fetchQuery } from "./FetchQuery";
 
 const pages = [
   {
@@ -25,10 +26,10 @@ const pages = [
   },
 ];
 
-function ResponsiveAppBar({ lightMode, darkMode, data }) {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-
+function ResponsiveAppBar({ lightMode, darkMode }) {
+  const { data } = fetchQuery();
   console.log(data.items);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
