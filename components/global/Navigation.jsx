@@ -27,8 +27,9 @@ const pages = [
 ];
 
 function ResponsiveAppBar({ lightMode, darkMode }) {
-  const { data } = fetchQuery();
-  console.log(data.items);
+  const { data, isLoading } = fetchQuery();
+  console.log(data?.items);
+  console.log(isLoading);
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
